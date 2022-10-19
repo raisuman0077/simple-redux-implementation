@@ -14,10 +14,16 @@ export const Action = createSlice({
         },
         decrement: (state) =>{
             state.count -= 1;
+        },
+        reset: (state) => {
+            state.count= 0;
+        },
+        incrementBy: (state,action) => {
+            state.count+= action.payload;
         }
     }
 });
 
-export const { increment, decrement} = Action.actions;
+export const { increment, decrement,reset,incrementBy} = Action.actions;
 
 export default Action.reducer;
